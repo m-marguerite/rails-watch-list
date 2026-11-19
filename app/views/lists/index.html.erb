@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center my-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="mb-0">Lists</h1>
     <%= link_to "+ New list", new_list_path, class: "btn btn-primary" %>
@@ -7,11 +7,10 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-4 mb-4">
-        <div class="card" style="width: 18rem;">
-          <img src="app/assets/images/movie.jpg" class="card-img-top" alt="<%= list.name %>">
-          <div class="card-body">
-            <h5 class="card-title">My lists</h5>
-            <p class="card-text"><%= list.name %></p>
+        <% image = list.image_url.presence || "https://picsum.photos/400/250?random=#{list.id}" %>
+        <div class="card-list" style="background-image: url('<%= image %>')">
+          <div class="card-list-overlay">
+            <h5><%= list.name %></h5>
             <%= link_to "Voir la list", list_path(list), class: "btn btn-primary" %>
           </div>
         </div>
