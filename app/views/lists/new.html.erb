@@ -1,0 +1,11 @@
+<div class="container my-5" style="max-width: 600px;">
+  <h1 class="mb-4">New lists</h1>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <%= render "form", list: @list %>
+    </div>
+  </div>
+
+  <%= link_to "← Back to list", root_path, class: "d-inline-block mt-3 text-decoration-none" %>
+</div>
