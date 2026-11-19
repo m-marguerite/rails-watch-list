@@ -23,15 +23,18 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-      <div class="container">
-        <%= link_to "Movies", root_path, class: "navbar-brand" %>
-      </div>
-    </nav>
+<body>
+  <%= render "shared/navbar" %>
 
-    <main>
-      <%= yield %>
-    </main>
-  </body>
+  <div class="banner banner-small" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%= asset_path("banner.jpg") %>');">
+    <div class="container">
+      <h1>Your <strong>movies</strong>, your <strong>lists</strong></h1>
+    </div>
+  </div>
+
+  <main>
+    <%= yield %>
+  </main>
+
+</body>
 </html>
